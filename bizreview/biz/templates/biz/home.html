@@ -1,0 +1,23 @@
+{% extends 'biz/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row hightlight">
+        <h5>Lets help others to find good Business. <a href="{% url 'add_post' %}" class="button-primary">Post your review</a></h5>
+    </div>
+
+    <div class="row">
+        <div class="seven columns">
+          <h4>Search for Business Review</h4>
+            <form method="post" class="post-form">
+                {% csrf_token %}
+                {{ address_form.as_p }}
+                <button type="submit" class="save button-primary">Search</button>
+            </form>
+        </div>
+        <div class="five columns contentads">
+          <!--<img src="https://c86og3avv551mqtcy2adcf845a-wpengine.netdna-ssl.com/wp-content/uploads/2015/03/AG-ever-336x280-300x250.png" /> -->
+          <img src="http://c86og3avv551mqtcy2adcf845a-wpengine.netdna-ssl.com/wp-content/uploads/2015/03/radaruk-300x600.png" />
+        </div>
+    </div>
+{% endblock %}

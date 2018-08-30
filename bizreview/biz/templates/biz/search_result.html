@@ -1,0 +1,20 @@
+{% extends 'biz/base.html' %}
+
+{% block content %}
+    <h1>Results</h1>
+    <div class="row">
+    {% for record in records %}
+        <div class="address-box four columns">
+            <ul>
+                {% for field, value in record.items %}
+                    {% if field != 'id' %}
+                        <li> {{ value }} </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+            <a href="{% url 'show_post' pk=record.id %}" class="button button-primary">Read reviews</a>
+        </div>
+    {% endfor %}
+    </div>
+    <div class="clearfix">&nbsp;</div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Biz Review</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="{% static 'hot/css/normalize.css' %}">
+  <link rel="stylesheet" href="{% static 'hot/css/skeleton.css' %}">
+
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="header">
+      <div class="row">
+        <div class="four columns"><a href="{% url 'home_page' %}"><img src="{% static 'hot/images/logo1.png' %}" alt="logo"/></a></div>
+        <div class="eight columns topads"><img src="https://blog.bannersnack.com/wp-content/uploads/2009/07/bannersnack-ad-468x60.jpg" /></div>
+      </div>
+    </div>
+    <div class="content">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div class="footer">
+      <p>Copyright &copy;{% now 'Y' %}.</p>
+      <!--<p>Privacy Policy & Terms and Conditions </p> -->
+    </div>
+  </div>
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+{% block javascript %}
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'biz/base.html' %}
+
+{% block content %}
+    <table>
+        {% for field in address_form %}
+            <tr>
+                <td>{{ field.label }}</td>
+                {% if field.name == 'region' or field.name == 'country' %}
+                    <td>{{ field.help_text }}</td>
+                {% else %}
+                    <td>{{ field.value }}</td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h4>Reviews</h4>
+    {% for complaint, user in review_list %}
+        <p>
+            <label class="user-label">{{ user.value|title }} :
+                <span class="float-right">posted on: {{ published_date }}</span>
+            </label>
+            {{ complaint.value }}
+        </p>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'biz/base.html' %}
+
+{% block content %}
+    <h1>Thank you</h1>
+    <p>{{ complaint.comment }}</p>
+    <p>{{ complaint.user.name }}</p>
+    <p>{{ complaint.address.region }}</p>
+    <p>{{ complaint.address.country }}</p>
+{% endblock %}
